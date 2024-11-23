@@ -1,0 +1,125 @@
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/typography" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: $white1;
+  color: $black1;
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.underline {
+  background-color: $orange1;
+  width: 4rem;
+  height: 0.15rem;
+  border: none;
+  margin-bottom: 1rem;
+  @include border-radius(8px);
+}
+
+.input__groups-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 2.5rem;
+}
+.input__group-lg,
+.input__group-sm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.input__group {
+  width: 100%;
+}
+.input__group-lg {
+  width: 73%;
+}
+.input__group-sm {
+  width: 34%;
+}
+
+.btn__group,
+.btn__group-sm,
+.btn__group-lg {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn__group-lg {
+  width: 73%;
+}
+
+.btn__group {
+  width: 100%;
+}
+
+.btn__group-sm {
+  width: 34%;
+}
+
+.link__group {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea {
+  height: 1rem;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: $white;
+  border: 1px solid $grey2;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border: none;
+  outline: 2px solid $purple1;
+}
+
+textarea {
+  height: 4.8rem;
+}
+
+.d-none {
+  display: none;
+}

@@ -1,0 +1,58 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+html {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+h1 {
+  @include roboto-font(900);
+  font-size: 1.5rem;
+  letter-spacing: 1.25px;
+  line-height: 1;
+  @include media-query("tablet") {
+    font-size: 2.25rem;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+  }
+  @include media-query("desktop") {
+    font-size: 3.75rem;
+    line-height: 2;
+  }
+}
+
+h2 {
+  @include roboto-font(700);
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  line-height: 1.25;
+  @include media-query("tablet") {
+    font-size: 1.75rem;
+    line-height: 1.7;
+  }
+  @include media-query("desktop") {
+    font-size: 3rem;
+  }
+}
+
+h3 {
+  @include roboto-font(300);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  @include media-query("tablet") {
+    font-size: 1.5rem;
+    line-height: 1.7;
+  }
+}
+
+p {
+  @include roboto-font(400);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  line-height: 1.7;
+  @include media-query("tablet") {
+    font-size: 1rem;
+  }
+}
