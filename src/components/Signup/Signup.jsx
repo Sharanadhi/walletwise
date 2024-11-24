@@ -1,6 +1,6 @@
 import './Signup.scss'
 
-function Signup() {
+const Signup = () => {
   return (
     <section className='signup'>
       <div className='signup__textContainer'>

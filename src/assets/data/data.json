@@ -1,0 +1,114 @@
+[
+  {
+    "id": 0,
+    "amount": 2400.00,
+    "type": "Expense",
+    "description": "Rent",
+    "category": "Household",
+    "date": "11/12/2024"
+  },
+  {
+    "id": 1,
+    "amount": 150.00,
+    "type": "Expense",
+    "description": "Groceries",
+    "category": "Household",
+    "date": "11/14/2024"
+  },
+  {
+    "id": 2,
+    "amount": 75.00,
+    "type": "Expense",
+    "description": "Utilities",
+    "category": "Household",
+    "date": "11/15/2024"
+  },
+  {
+    "id": 3,
+    "amount": 50.00,
+    "type": "Expense",
+    "description": "Internet",
+    "category": "Household",
+    "date": "11/16/2024"
+  },
+  {
+    "id": 4,
+    "amount": 80.00,
+    "type": "Expense",
+    "description": "Dining Out",
+    "category": "Entertainment",
+    "date": "11/18/2024"
+  },
+  {
+    "id": 5,
+    "amount": 120.00,
+    "type": "Expense",
+    "description": "Gas",
+    "category": "Transportation",
+    "date": "11/20/2024"
+  },
+  {
+    "id": 6,
+    "amount": 60.00,
+    "type": "Expense",
+    "description": "Public Transport",
+    "category": "Transportation",
+    "date": "11/21/2024"
+  },
+  {
+    "id": 7,
+    "amount": 45.00,
+    "type": "Expense",
+    "description": "Movie Tickets",
+    "category": "Entertainment",
+    "date": "11/22/2024"
+  },
+  {
+    "id": 8,
+    "amount": 100.00,
+    "type": "Expense",
+    "description": "Gym Membership",
+    "category": "Health",
+    "date": "11/23/2024"
+  },
+  {
+    "id": 9,
+    "amount": 50.00,
+    "type": "Expense",
+    "description": "Medication",
+    "category": "Health",
+    "date": "11/24/2024"
+  },
+  {
+    "id": 10,
+    "amount": 150.00,
+    "type": "Income",
+    "description": "Freelance Work",
+    "category": "Income",
+    "date": "11/25/2024"
+  },
+  {
+    "id": 11,
+    "amount": 2000.00,
+    "type": "Income",
+    "description": "Salary",
+    "category": "Income",
+    "date": "11/26/2024"
+  },
+  {
+    "id": 12,
+    "amount": 500.00,
+    "type": "Investment",
+    "description": "Stocks",
+    "category": "Investment",
+    "date": "11/27/2024"
+  },
+  {
+    "id": 13,
+    "amount": 200.00,
+    "type": "Investment",
+    "description": "Mutual Funds",
+    "category": "Investment",
+    "date": "11/28/2024"
+  }
+]

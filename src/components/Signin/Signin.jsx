@@ -1,6 +1,6 @@
 import '../Signup/Signup.scss'
 
-function Signup() {
+const Signin = () => {
   return (
     <section className='signup'>
       <div className='signup__textContainer'>
@@ -20,7 +20,7 @@ function Signup() {
           <h3 className='signup__title'>Sign in</h3>
           <div className='signup__textbox'>
           <p className='signup__text'>Don&apos;t have an account?</p>
-          <a href="/" className='signup__link'>Sign up</a>
+          <a href="/signup" className='signup__link'>Sign up</a>
           </div>
         </div>
         <form action="">
@@ -47,4 +47,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Signin;

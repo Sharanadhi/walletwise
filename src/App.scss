@@ -32,15 +32,6 @@ body {
   height: 100%;
 }
 
-.underline {
-  background-color: $orange1;
-  width: 4rem;
-  height: 0.15rem;
-  border: none;
-  margin-bottom: 1rem;
-  @include border-radius(8px);
-}
-
 .input__groups-row {
   display: flex;
   justify-content: flex-start;
@@ -110,10 +101,14 @@ textarea {
 }
 
 input:focus,
-textarea:focus,
-select:focus {
+textarea:focus {
   border: none;
   outline: 2px solid $purple1;
+}
+
+select:focus {
+  border: none;
+  outline: none;
 }
 
 textarea {
@@ -122,4 +117,16 @@ textarea {
 
 .d-none {
   display: none;
+}
+
+.bg-green {
+  color: $green1;
+}
+
+.bg-red {
+  color: $red1;
+}
+
+.bg-blue {
+  color: $blue1;
 }

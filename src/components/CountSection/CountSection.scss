@@ -1,0 +1,26 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.countSection {
+  margin: 2rem 2rem;
+  @include flex-space-between;
+  &__container {
+    @include flex-start;
+    flex-direction: column;
+    flex: 1;
+  }
+  &__graphcontainer {
+    flex: 2;
+  }
+  &__title-income,
+  &__title-expense {
+    font-weight: 600;
+  }
+  &__title-income {
+    color: $green1;
+  }
+  &__title-expense {
+    color: $red1;
+  }
+}

@@ -1,0 +1,36 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.transaction {
+  margin: 2rem 2rem;
+  &__container {
+    @include flex-space-between;
+  }
+  &__title {
+    font-size: 2.2rem;
+    line-height: 1.5;
+  }
+  &__text {
+    font-weight: 300;
+  }
+  &__options {
+    @include flex-space-between;
+    gap: 1rem;
+  }
+  &__filter {
+    border: none;
+  }
+  &__btn {
+    height: 2rem;
+    padding: 0.25rem 1.25rem;
+    border: none;
+    background-color: $purple2;
+    color: $white;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  &__btn:hover {
+    background-color: $purple1;
+  }
+}

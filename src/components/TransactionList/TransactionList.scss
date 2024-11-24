@@ -1,0 +1,43 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.transactionList {
+  margin: 2rem 2rem;
+  @include flex-start;
+  flex-direction: column;
+  &__filterbox {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  &__footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  &__page {
+    height: 2rem;
+    width: 2rem;
+    padding: 0.5rem 0.5rem;
+    background-color: $purple2;
+    color: $white;
+    margin-left: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  &__page:hover,
+  &__page:active {
+    background-color: $purple1;
+  }
+}
