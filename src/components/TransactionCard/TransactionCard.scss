@@ -6,9 +6,9 @@
   width: 100%;
   padding: 1rem;
   max-width: 24rem;
-  border: 1.5px solid $purple1;
+  border: 1.5px solid $beige;
   border-radius: 24px;
-  background-color: $white;
+  background-color: $white3;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -22,7 +22,7 @@
   &__description,
   &__amount {
     font-weight: 600;
-    color: $purple2;
+    color: $black1;
   }
   &__category {
     font-weight: 300;

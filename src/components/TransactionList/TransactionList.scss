@@ -29,7 +29,7 @@
     height: 2rem;
     width: 2rem;
     padding: 0.5rem 0.5rem;
-    background-color: $purple2;
+    background-color: $blue3;
     color: $white;
     margin-left: 1rem;
     border: none;
@@ -38,6 +38,6 @@
   }
   &__page:hover,
   &__page:active {
-    background-color: $purple1;
+    background-color: $blue2;
   }
 }
