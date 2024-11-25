@@ -1,12 +1,18 @@
 import '../Signup/Signup.scss'
+import walletwise_logo from '../../assets/WalletWise.png'
 
 const Signin = () => {
   return (
     <section className='signup'>
       <div className='signup__textContainer'>
         <div className='signup__headingbox'>
+          <div className='signup__logoContainer'>
+            <img src={walletwise_logo} alt="wallet wise logo" className='signup__logo' />
+          </div>
+          <div>
           <h2 className='signup__heading'>Walletwise</h2>
           <h3 className='signup__subheading'>Financial Wisdom at Your Fingertips</h3>
+          </div>
           <div className='signup__descriptionbox'>
             <p className='signup__description'>
               WalletWise simplifies the process of tracking your spending. With easy categorization, visual reports, 
