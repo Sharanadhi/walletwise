@@ -8,6 +8,7 @@ import "./Transactions.scss";
 
 const Transactions = () => {
   const [open, setOpen] = useState(false);
+  const [amount, setAmount] = useState(0.00); 
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -32,9 +33,9 @@ const Transactions = () => {
             className="transaction__filter"
           >
             <option value="">Type</option>
-            <option value="Rent">Rent</option>
-            <option value="Grocery">Grocery</option>
-            <option value="Travel">Travel</option>
+            <option value="Income">Income</option>
+            <option value="Expense">Expense</option>
+            <option value="Investment">Investment</option>
           </select>
           <select
             name="filter__category"
@@ -57,8 +58,8 @@ const Transactions = () => {
       <Dialog fullWidth={true} maxWidth={"lg"} open={open} onClose={handleClose}>
         <DialogTitle>New transaction</DialogTitle>
         <DialogContent>
-          <h2 className="transaction__amount">$0.00</h2>
-          <AddTransaction />
+          <h2 className="transaction__amount">${amount}</h2>
+          <AddTransaction amount={amount} setAmount={setAmount}/>
         </DialogContent>
         <DialogActions>
           <button onClick={handleClose} className="transaction__btn cancel__btn">Cancel</button>

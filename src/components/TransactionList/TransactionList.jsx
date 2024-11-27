@@ -38,7 +38,6 @@ const TransactionList = () => {
     pageNumbers.push(i);
   }
 
-
   return (
     <section className='transactionList'>
       <div className='transactionList__filterbox'>

@@ -1,0 +1,47 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.header {
+  height: 3rem;
+  background-color: $white1;
+  border-bottom: 1px solid $grey;
+  @include flex-space-between;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  &__logo {
+    height: 3rem;
+  }
+  &__linksContainer {
+    padding: 1rem;
+    @include flex-center;
+    gap: 1.2rem;
+  }
+  &__links {
+    @include flex-center;
+    gap: 1.2rem;
+  }
+  &__link {
+    list-style-type: none;
+    a {
+      text-decoration: none;
+      color: $blue1;
+      cursor: pointer;
+    }
+    .active {
+      color: $blue2;
+    }
+  }
+  // &__profileContainer {
+  // }
+  &__profile {
+    text-decoration: none;
+    border-radius: 50%;
+    border: 1px solid $grey1;
+    padding: 6px;
+    background-color: $blue2;
+    color: $white;
+    cursor: pointer;
+  }
+}
