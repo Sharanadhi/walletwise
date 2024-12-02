@@ -14,7 +14,8 @@
     flex: 2;
   }
   &__title-income,
-  &__title-expense {
+  &__title-expense,
+  &__title-investment {
     font-weight: 600;
   }
   &__title-income {
@@ -22,5 +23,8 @@
   }
   &__title-expense {
     color: $red1;
+  }
+  &__title-investment {
+    color: $yellow;
   }
 }

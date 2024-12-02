@@ -6,9 +6,10 @@ import DialogTitle from "@mui/material/DialogTitle";
 import AddTransaction from "../AddTransaction/AddTransaction";
 import "./Transactions.scss";
 
+
+
 const Transactions = () => {
   const [open, setOpen] = useState(false);
-  const [amount, setAmount] = useState(0.00); 
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -17,6 +18,7 @@ const Transactions = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
   return (
     <section className="transaction">
       <div className="transaction__container">
@@ -55,11 +57,15 @@ const Transactions = () => {
         </div>
       </div>
 
-      <Dialog fullWidth={true} maxWidth={"lg"} open={open} onClose={handleClose}>
+      <Dialog 
+        fullWidth={true} 
+        maxWidth={"lg"} 
+        open={open}
+        onClose={handleClose}
+      >
         <DialogTitle>New transaction</DialogTitle>
         <DialogContent>
-          <h2 className="transaction__amount">${amount}</h2>
-          <AddTransaction amount={amount} setAmount={setAmount}/>
+          <AddTransaction/>
         </DialogContent>
         <DialogActions>
           <button onClick={handleClose} className="transaction__btn cancel__btn">Cancel</button>

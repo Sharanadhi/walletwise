@@ -11,7 +11,11 @@ const CountSection = () => {
         <h3 className='countSection__title-expense'>Expense</h3>
         <p className='countSection__count'>$4,300</p>
       </div>
-      <div className='countSection__graphcontainer'></div>
+      <div className='countSection__container'>
+        <h3 className='countSection__title-investment'>Investment</h3>
+        <p className='countSection__count'>$2,000</p>
+      </div>
+      {/* <div className='countSection__graphcontainer'></div> */}
     </section>
   );
 }

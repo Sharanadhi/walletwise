@@ -1,5 +1,4 @@
-const AddTransaction = ({amount,setAmount}) =>{
-  const handleAmountChange = (e) => { setAmount(e.target.value); };
+const AddTransaction = () =>{
   
   return (
     <section className="addTransaction">
@@ -7,7 +6,7 @@ const AddTransaction = ({amount,setAmount}) =>{
         <div className="input__groups-row">
           <div className="input__group">
             <label htmlFor="">Amount</label>
-            <input type="number" name="" id="" className="" value={amount} onChange={handleAmountChange}/>
+            <input type="number" name="amount" id="" className=""/>
           </div>
           <div className="input__group">
             <label htmlFor="">Date</label>
