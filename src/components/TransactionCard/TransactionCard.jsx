@@ -1,7 +1,6 @@
 import TransactIcon from "../TransactIcon/Transacticon";
 import './TransactionCard.scss';
-const TransactionCard = ({data}) => {
-  console.log(data);
+const TransactionCard = ({ data }) => {
   return (
     <section className="transactionCard">
       <div className="transactionCard__row">
@@ -15,7 +14,9 @@ const TransactionCard = ({data}) => {
       </div>
       <div className="transactionCard__row">
         <div className="transactionCard__typeContainer">
-          <h3><TransactIcon type={data.type}/></h3>
+          <h3>
+            <TransactIcon type={data.type} />
+          </h3>
         </div>
         <div className="transactionCard__amountContainer">
           <h3 className="transactionCard__amount">${data.amount}</h3>
@@ -23,6 +24,6 @@ const TransactionCard = ({data}) => {
       </div>
     </section>
   );
-}
+};
 
 export default TransactionCard;

@@ -1,31 +1,13 @@
-import { useState } from "react";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
-import AddTransaction from "../AddTransaction/AddTransaction";
 import "./Transactions.scss";
 
-
-
-const Transactions = () => {
-  const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
+const Transactions = ({ handleClickOpen }) => {
   return (
     <section className="transaction">
       <div className="transaction__container">
         <div className="transaction__header">
           <h2 className="transaction__title">Transactions</h2>
           <p className="transaction__text">
-            You have 2 incomes and 23 expenses this month
+            You have 0 incomes and 0 expenses this month
           </p>
         </div>
         <div className="transaction__options">
@@ -56,22 +38,6 @@ const Transactions = () => {
           </button>
         </div>
       </div>
-
-      <Dialog 
-        fullWidth={true} 
-        maxWidth={"lg"} 
-        open={open}
-        onClose={handleClose}
-      >
-        <DialogTitle>New transaction</DialogTitle>
-        <DialogContent>
-          <AddTransaction/>
-        </DialogContent>
-        <DialogActions>
-          <button onClick={handleClose} className="transaction__btn cancel__btn">Cancel</button>
-          <button type="submit" className="transaction__btn">Add</button>
-        </DialogActions>
-      </Dialog>
     </section>
   );
 };
