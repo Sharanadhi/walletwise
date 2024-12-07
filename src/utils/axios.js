@@ -6,10 +6,9 @@ const axiosInstance = axios.create({
 });
 
 axiosInstance.interceptors.response.use(
-  (response) => response,
+  (response) =>response,
   (error) => {
     if (error.response && error.response.status === 401) {
-      // Token has expired
       localStorage.removeItem('token');
       const navigate = useNavigate();
       navigate('/');
