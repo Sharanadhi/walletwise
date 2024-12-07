@@ -2,8 +2,7 @@ const handleApiError = (error) => {
   if (error.response) {
     // The request was made and the server responded with a status code
     // that falls out of the range of 2xx
-    const { status, data } = error.response;
-    console.log(error.response);
+    const { status, data } = error.response;    
     console.error(`API Error: ${status} - ${data.error}`);
     return data.error;    
   } else if (error.request) {

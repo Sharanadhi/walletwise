@@ -14,7 +14,7 @@ const CountSection = () => {
       }
       try {
         const response = await axiosInstance.get(
-          `${import.meta.env.VITE_API_URL}transactions/counts`,
+          `${import.meta.env.VITE_API_URL}transactions/amounts`,
           {
             headers: { authorization: `Bearer ${token}` },
           }
