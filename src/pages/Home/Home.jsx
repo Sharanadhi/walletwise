@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axiosInstance from "../../utils/axios";
 import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
+// import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import CountSection from "../../components/CountSection/CountSection";
@@ -61,19 +61,11 @@ const Home = () => {
       >
         <DialogTitle>New transaction</DialogTitle>
         <DialogContent>
-          <AddTransaction />
+          <AddTransaction handleClose={handleClose} />
         </DialogContent>
-        <DialogActions>
-          <button
-            onClick={handleClose}
-            className="transaction__btn cancel__btn"
-          >
-            Cancel
-          </button>
-          <button type="submit" className="transaction__btn">
-            Add
-          </button>
-        </DialogActions>
+        {/* <DialogActions>
+          
+        </DialogActions> */}
       </Dialog>
     </section>
   );

@@ -86,7 +86,6 @@ const Signup = () => {
         setTimeout(() => navigate("/"), 2000);
       }
     } catch (error) {
-      console.error("Error signing in", error);
       if (error.response && error.response.data && error.response.data.error) {
         if (error.response.data.type === "email")
           setEmailApiError(error.response.data.error);

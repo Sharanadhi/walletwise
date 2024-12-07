@@ -58,7 +58,7 @@ body {
   width: 34%;
 }
 
-.input__group label{
+.input__group label {
   margin-bottom: 0.5rem;
 }
 
@@ -70,12 +70,13 @@ body {
   justify-content: flex-end;
 }
 
-.btn__group-lg {
-  width: 73%;
-}
-
 .btn__group {
   width: 100%;
+  justify-content: space-between;
+}
+
+.btn__group-lg {
+  width: 73%;
 }
 
 .btn__group-sm {
@@ -101,6 +102,7 @@ textarea {
   height: 1rem;
   width: 100%;
   padding: 1rem;
+  margin-bottom: 0.5rem;
   border-radius: 8px;
   background-color: $grey;
   border: 1px solid $grey2;
@@ -117,6 +119,7 @@ select {
   height: 2rem;
   width: 100%;
   padding: 0.25rem;
+  margin-bottom: 0.5rem;
   border-radius: 8px;
   background-color: $grey;
   border: 1px solid $grey2;
@@ -132,33 +135,45 @@ textarea {
   height: 4.8rem;
 }
 
+.primary__btn,
+.cancel__btn {
+  height: 2rem;
+  padding: 0.25rem 1.25rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
 .primary__btn {
-    height: 2rem;
-    padding: 0.25rem 1.25rem;
-    border: none;
-    background-color: $blue3;
-    color: $white;
-    border-radius: 12px;
-    cursor: pointer;
-  }
-  .primary__btn:hover {
-    background-color: $blue2;
-  }
+  margin-left: 1rem;
+  background-color: $white;
+  color: $blue3;
+  border: 1px solid $blue3;
+}
+.primary__btn:hover,
+.primary__btn:active {
+  background-color: $blue3;
+  color: $white;
+}
 
 .cancel__btn {
   background-color: $white;
-  color: $blue2;
-  border: 1px solid $blue3;
+  color: $red1;
+  border: 1px solid $red1;
 }
 
 .cancel__btn:hover,
 .cancel__btn:active {
-  background-color: $blue2;
+  background-color: $red1;
   color: $white;
 }
 
-.error-message{
+.error-message {
   color: $red1;
+  font-size: 0.75rem;
+}
+
+.error-icon{
+  margin-right: 0.25rem;
 }
 
 .d-none {

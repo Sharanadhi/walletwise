@@ -19,7 +19,6 @@ const CountSection = () => {
             headers: { authorization: `Bearer ${token}` },
           }
         );
-        console.log(response);
         response.data.income
           ? setTotalIncome(response.data.income)
           : setTotalIncome("0.00");
