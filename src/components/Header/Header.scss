@@ -44,4 +44,10 @@
     color: $white;
     cursor: pointer;
   }
+  &__logout{
+    text-decoration: none;
+    color: $red1;
+    cursor: pointer;
+
+  }
 }
