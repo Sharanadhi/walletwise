@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/axios";
 import Dialog from "@mui/material/Dialog";
 // import DialogActions from "@mui/material/DialogActions";
@@ -12,6 +13,7 @@ import Header from "../../components/Header/Header";
 import AddTransaction from "../../components/AddTransaction/AddTransaction";
 import "./Home.scss";
 const Home = () => {
+  const navigate = useNavigate();
   const [transactions, setTransactions] = useState([]);
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {
@@ -36,11 +38,14 @@ const Home = () => {
         );
         setTransactions(response.data.transactions);
       } catch (error) {
-        console.log(error);
+        if (error.response && error.response.status === 401) {
+          localStorage.removeItem("token");
+          navigate("/");
+        }
       }
     };
     fetchData();
-  }, []);
+  }, [navigate]);
 
   return (
     <section className="home">

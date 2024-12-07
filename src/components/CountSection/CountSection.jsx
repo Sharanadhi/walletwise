@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/axios";
 import "./CountSection.scss";
 
 const CountSection = () => {
+  const navigate = useNavigate();
   const [totalIncome, setTotalIncome] = useState(0);
   const [totalExpense, setTotalExpense] = useState(0);
   const [totalInvestment, setTotalInvestemnt] = useState(0);
@@ -29,11 +31,17 @@ const CountSection = () => {
           ? setTotalInvestemnt(response.data.investment)
           : setTotalInvestemnt("0.00");
       } catch (error) {
-        console.log(error);
+        if (
+          (error.response && error.response.status === 401) ||
+          error.response.status === 403
+        ) {
+          localStorage.removeItem("token");
+          navigate("/");
+        }
       }
     };
     fetchData();
-  }, []);
+  }, [navigate]);
 
   return (
     <section className="countSection">

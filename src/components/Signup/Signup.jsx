@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axiosInstance from "../../utils/axios";
+import handleApiError from "../../utils/errorHandler";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaCircleExclamation } from "react-icons/fa6";
@@ -19,7 +20,6 @@ const Signup = () => {
   const [emailApiError, setEmailApiError] = useState("");
   const [phoneApiError, setPhoneApiError] = useState("");
   const [apiError, setApiError] = useState("");
-  const baseUrl = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
 
   const validatePhoneNumber = (phone) => {
@@ -62,7 +62,10 @@ const Signup = () => {
       return;
     }
     try {
-      const response = await axios.post(`${baseUrl}userauth/signup`, formData);
+      const response = await axiosInstance.post(
+        `${import.meta.env.VITE_API_URL}userauth/signup`,
+        formData
+      );
       if (response.data && response.status === 201) {
         localStorage.setItem("token", response.data.token);
         setFormData({
@@ -86,11 +89,15 @@ const Signup = () => {
         setTimeout(() => navigate("/"), 2000);
       }
     } catch (error) {
+      const errorMessage = handleApiError(error);
       if (error.response && error.response.data && error.response.data.error) {
-        if (error.response.data.type === "email")
+        if (error.response.data.type === "email") {
           setEmailApiError(error.response.data.error);
-        if (error.response.data.type === "phone")
+        } else if (error.response.data.type === "phone") {
           setPhoneApiError(error.response.data.error);
+        } else {
+          setApiError(errorMessage);
+        }
       } else {
         setApiError("An error occurred during sign in. Please try again later");
       }

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../../utils/axios";
-import handleApiError from "../../utils/errorHandler";
+import { useNavigate } from "react-router-dom";
 import "./Transactions.scss";
 
 const Transactions = ({ handleClickOpen }) => {
+  const navigate = useNavigate();
   const [totalIncome, setTotalIncome] = useState(0);
   const [totalExpense, setTotalExpense] = useState(0);
   const [totalInvestment, setTotalInvestemnt] = useState(0);
@@ -30,12 +31,17 @@ const Transactions = ({ handleClickOpen }) => {
           ? setTotalInvestemnt(response.data.investment)
           : setTotalInvestemnt("0.00");
       } catch (error) {
-        console.log(error);
-        handleApiError(error);
+        if (
+          (error.response && error.response.status === 401) ||
+          error.response.status === 403
+        ) {
+          localStorage.removeItem("token");
+          navigate("/");
+        }
       }
     };
     fetchData();
-  }, []);
+  }, [navigate]);
 
   return (
     <section className="transaction">

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import axiosInstance from "../../utils/axios";
+import handleApiError from "../../utils/errorHandler";
 import { useNavigate } from "react-router-dom";
 import { FaCircleExclamation } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
@@ -13,7 +14,6 @@ const Signin = () => {
   const [emailApiError, setEmailApiError] = useState("");
   const [passwordApiError, setPasswordApiError] = useState("");
   const [apiError, setApiError] = useState("");
-  const baseUrl = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
 
   const validate = () => {
@@ -40,7 +40,10 @@ const Signin = () => {
       return;
     }
     try {
-      const response = await axios.post(`${baseUrl}userauth/signin`, formData);
+       const response = await axiosInstance.post(
+         `${import.meta.env.VITE_API_URL}userauth/signin`,
+         formData
+       );
       localStorage.setItem("token", response.data.token);
       setFormData({ email: "", password: "" });
       setErrors({});
@@ -56,12 +59,15 @@ const Signin = () => {
       });
       setTimeout(() => navigate("/home"), 2000);
     } catch (error) {
-      console.error("Error signing in", error);
+      const errorMessage = handleApiError(error);
       if (error.response && error.response.data && error.response.data.error) {
         if (error.response.data.type === "email") {
           setEmailApiError(error.response.data.error);
-        } else {
+        } else if (error.response.data.type === "password") {
           setPasswordApiError(error.response.data.error);
+        }
+        else {
+          setApiError(errorMessage);
         }
       } else {
         setApiError("An error occurred during sign in. Please try again later");

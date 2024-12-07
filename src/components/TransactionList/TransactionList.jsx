@@ -1,8 +1,6 @@
 import { useState,useEffect } from 'react';
 import TransactionCard from '../TransactionCard/TransactionCard';
-import './TransactionList.scss'
-// import transactions from '../../assets/data/data.json';
-
+import "./TransactionList.scss";
 
 const TransactionList = ({ transactions }) => {
   const [currentPage, setCurrentPage] = useState(1);

@@ -84,6 +84,13 @@ const AddTransaction = ({ handleClose }) => {
     } catch (error) {
       const errorMessage = handleApiError(error);
       setApiError(errorMessage);
+      if (
+        (error.response && error.response.status === 401) ||
+        error.response.status === 403
+      ) {
+        localStorage.removeItem("token");
+        navigate("/");
+      }
     }
   };
 
